@@ -39,7 +39,7 @@ resource "aws_security_group" "blog" {
 module "blog_sg" {
   source  = "terraform-aws-modules/security-group/aws"
   version = "5.1.2"
-  name = "blog_new"
+  name = "blog"
 
   security_group_id = aws_security_group.blog.id
   
@@ -48,5 +48,4 @@ module "blog_sg" {
 
   egress_rules = ["all-all"]
   egress_cidr_blocks = ["0.0.0.0/0"]
-
 }
